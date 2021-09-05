@@ -1,0 +1,15 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let c of categories">
+            <div class="card text-center p-3 rounded">
+                <div class="d-flex justify-content-center">
+                    <img width="30%" src="../../../../assets/logo.png" alt="">
+                </div>
+                <h2 class="font-weight-bold mt-2 text-info"> {{ c.title }} </h2>
+                <p>{{ c.description }}</p>
+                <button [routerLink]="'/user-dashboard/category/'+ c.id + '/' + c.title" type="button"
+                    class="btn btn-outline-info">Info</button>
+            </div>
+        </div>
+    </div>
+</div>

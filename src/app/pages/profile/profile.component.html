@@ -1,0 +1,62 @@
+<div class="card rounded">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="profile-header">My Profile</h2>
+        <div>
+            <button mat-flat-button color="accent">
+                <mat-icon>
+                    <span class="material-icons-round">
+                        edit_note
+                    </span>
+                </mat-icon> Edit
+            </button>
+            <button class="ms-3" mat-flat-button color="warn">
+                <mat-icon>
+                    <span class="material-icons-round">
+                        delete_forever
+                    </span>
+                </mat-icon> Delete
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <td>{{ login.getUser().username }}</td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>{{ login.getUser().firstName }}</td>
+                        </tr>
+                        <tr>
+                            <th>LastName</th>
+                            <td>{{ login.getUser().lastName }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ login.getUser().email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{ login.getUser().phone }}</td>
+                        </tr>
+                        <tr>
+                            <th>Role</th>
+                            <td>{{ login.getUser().authorities[0].authority }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ login.getUser().enabled ? "ACTIVE" : "NOTACTIVE" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

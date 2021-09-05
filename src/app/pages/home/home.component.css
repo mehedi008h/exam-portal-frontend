@@ -1,0 +1,25 @@
+.banner-text {
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+.banner-text h1 {
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 60px;
+}
+.banner-text p {
+    font-size: 18px;
+    font-weight: 400;
+    color: gray;
+}
+.banner-text a {
+    margin-top: 20px;
+    text-decoration: none;
+}
+.banner-text a:hover mat-icon {
+    transition:transform ease-in-out;
+    transition-duration: 0.5s;
+    transform: translateX(10px);
+    color: white;
+}

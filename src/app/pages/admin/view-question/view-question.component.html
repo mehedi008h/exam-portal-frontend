@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2>{{ qTitle }}</h2>
+        <button [routerLink]="'/admin/add-question/'+qId+'/'+qTitle" mat-flat-button color="accent">
+            <mat-icon>
+                <span class="material-icons-round">
+                    edit_note
+                </span>
+            </mat-icon> Add Question
+        </button>
+    </div>
+</div>
+<div class="card mt-2 p-3" *ngFor="let q of question; let i = index">
+    <div class="d-flex qus">
+        <b class="q-no">{{ i+1 }}</b>
+        <p class="ml-3">{{ q.content }}</p>
+    </div>
+    <div class="ml-5">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="option">1 . {{ q.option1 }}</p>
+                <p class="option">2 . {{ q.option2 }}</p>
+            </div>
+            <div class="col-md-6">
+                <p class="option">3 . {{ q.option3 }}</p>
+                <p class="option">4 . {{ q.option4 }}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+        <p class="ml-5 ans"> Answare : {{ q.answer }}</p>
+        <div>
+            <button routerLink="/admin/add-categories" mat-flat-button color="accent" class="mr-3">
+                <mat-icon>
+                    <span class="material-icons-round">
+                        drive_file_rename_outline
+                    </span>
+                </mat-icon>
+            </button>
+            <button (click)="deleteQuestion(q.quesId)" mat-flat-button color="accent">
+                <mat-icon>
+                    <span class="material-icons-round">
+                        delete
+                    </span>
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

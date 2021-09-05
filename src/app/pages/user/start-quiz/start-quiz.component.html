@@ -1,0 +1,112 @@
+<div class="container-fluid" *ngIf="!isSubmit">
+    <div class="row">
+        <div class="col-md-2">
+            <!-- instructions -->
+            <div class="card">
+                <h3 class="text-center">Instraction</h3>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- questions -->
+            <ng-container *ngIf="questions">
+                <div class="card p-3 text-center mb-2">
+                    <h1 class="mt20">
+                        On Going Quiz <b>{{ questions[0].quiz.title }}</b>
+                    </h1>
+                </div>
+            </ng-container>
+
+            <mat-card *ngFor="let q of questions; let i = index" class="mt-2">
+                <mat-card-content>
+                    <p>
+                        <b class="q-no">{{ i + 1 }}</b>
+                        <span class="ml-3 content" [innerHTML]="q.content"></span>
+                    </p>
+
+                    <mat-divider> </mat-divider>
+                    <br />
+
+                    <div class="row ml-5">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <input class="" type="radio" [value]="q.option1" [name]="q.option1"
+                                [(ngModel)]="q.givenAnswer" />
+                            <span class="ml-2">{{
+                                q.option1 }}</span>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <input type="radio" [value]="q.option2" [name]="q.option2"
+                                [(ngModel)]="q.givenAnswer" /><span class="ml-2">{{
+                                q.option2 }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row ml-5">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <input type="radio" [value]="q.option3" [name]="q.option3"
+                                [(ngModel)]="q.givenAnswer" /><span class="ml-2">{{
+                                q.option3 }}</span>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <input type="radio" [value]="q.option4" [name]="q.option4"
+                                [(ngModel)]="q.givenAnswer" /><span class="ml-2">{{
+                                q.option4 }}</span>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <div class="container text-center mt-3 mb-5">
+                <button (click)="submitQuiz()" mat-raised-button color="primary">
+                    Submit Quiz
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <!-- progress -->
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title> Progress </mat-card-title>
+                    <mat-card-subtitle>
+                        Quiz will automatically submitted when timer reaches to <b>0:0</b>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1 class="text-center">{{ getFormattedTime() }}</h1>
+                    <mat-spinner mode="determinate" color="accent" style="margin: auto"
+                        [value]="(timer / (this.questions.length * 2 * 60)) * 100"></mat-spinner>
+                </mat-card-content>
+            </mat-card>
+            <div class="card p-3">
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let q of questions; let i = index">
+                        <b [style.background]="q.givenAnswer? 'green' : 'red'" class="m-no">{{ i + 1 }}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- show the result -->
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <div class="row mt20">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="mt-5 text-center">
+                    <img src="../../../../assets/trophy.png" width="20%" alt="">
+                </div>
+                <div class="mt-3 text-center">
+                    <h1>Marks Got : {{ questions.marksGot }}</h1>
+                    <h1>Correct Answers : {{ questions.correctAnswers }}</h1>
+                    <h1>Questions Attempted :{{ questions.attempted }}</h1>
+                </div>
+                <div class="mb-5 mt-2 text-center">
+                    <button class="print" type="button" class="btn btn-outline-info">Print</button>
+                    <button [routerLink]="'/user-dashboard/'" type="button"
+                        class="btn btn-outline-success">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- {{ questions| json}} -->

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.profile-header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid hotpink;
+    border-radius: 25px;
+    margin: 0;
+    color: black;
+}
+.inf-content{
+    border:1px solid #DDDDDD;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}			                                                      

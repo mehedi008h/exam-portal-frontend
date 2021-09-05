@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  a:hover {
+    color: palevioletred;
+    text-decoration: none;
+  }
+  /* .navbar {
+    position: fixed;
+  } */

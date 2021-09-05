@@ -1,0 +1,31 @@
+<div class="card rounded">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2>All Categories</h2>
+        <button routerLink="/admin/add-categories" mat-flat-button color="accent">
+            <mat-icon>
+                <span class="material-icons-round">
+                    edit_note
+                </span>
+            </mat-icon> Add Category
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="card categories p-2 my-3" *ngFor="let c of categories">
+            <div class="content d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="icon ml-2">
+                        <mat-icon mat-list-icon>folder</mat-icon>
+                    </div>
+                    <div class="info ml-5">
+                        <h2> {{ c.title}} </h2>
+                        <p> {{ c.description}} </p>
+                    </div>
+                </div>
+                <div class="action d-flex flex-column align-items-center">
+                    <button class="mb-2" (click)="deleteCategory(c.id)" mat-raised-button color="accent">Delete</button>
+                    <button mat-raised-button color="primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

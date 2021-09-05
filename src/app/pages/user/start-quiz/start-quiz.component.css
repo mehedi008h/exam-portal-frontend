@@ -1,0 +1,23 @@
+.q-no {
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: white;
+}
+.m-no {
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+.content {
+    font-size: large;
+}
+.print {
+    margin-left: 10px;
+}

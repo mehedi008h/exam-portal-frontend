@@ -1,0 +1,14 @@
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.active {
+  border-radius: 50px;
+  background-color: #38b000;
+  color: white;
+}
+.deactive {
+  border-radius: 50px;
+  background-color: #ba181b;
+  color: white;
+}
